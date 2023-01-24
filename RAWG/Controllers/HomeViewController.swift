@@ -30,10 +30,17 @@ class HomeViewController: UIViewController {
         homeFeedTable.tableHeaderView = headerView
         //headerView.backgroundColor = .white
         
+        fetchgetGames()
+        
        
     }
     override func viewDidLayoutSubviews() {
         homeFeedTable.frame = view.bounds
+    }
+    private func fetchgetGames(){
+        APICaller.shared.getAllGames { _ in
+            //
+        }
     }
 
     
@@ -56,7 +63,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
            return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 650
+        //return 320
+        return 580
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         40

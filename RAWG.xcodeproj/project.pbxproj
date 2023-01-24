@@ -18,6 +18,8 @@
 		7247BA7E297E7C5C009CFF1A /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247BA7D297E7C5C009CFF1A /* FavoriteViewController.swift */; };
 		7247BA82297E80FD009CFF1A /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247BA81297E80FD009CFF1A /* ItemTableViewCell.swift */; };
 		7247BA84297E8549009CFF1A /* HeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247BA83297E8549009CFF1A /* HeaderUIView.swift */; };
+		7247BA87297FAD82009CFF1A /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247BA86297FAD82009CFF1A /* APICaller.swift */; };
+		7247BA89297FB29E009CFF1A /* GamesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247BA88297FB29E009CFF1A /* GamesModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		7247BA7D297E7C5C009CFF1A /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		7247BA81297E80FD009CFF1A /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		7247BA83297E8549009CFF1A /* HeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderUIView.swift; sourceTree = "<group>"; };
+		7247BA86297FAD82009CFF1A /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		7247BA88297FB29E009CFF1A /* GamesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 		7247BA60297E7B3B009CFF1A /* RAWG */ = {
 			isa = PBXGroup;
 			children = (
+				7247BA85297FAD71009CFF1A /* Managers */,
 				7247BA80297E8050009CFF1A /* Views */,
 				7247BA7F297E8044009CFF1A /* Models */,
 				7247BA78297E7C04009CFF1A /* Controllers */,
@@ -93,6 +98,7 @@
 		7247BA7F297E8044009CFF1A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7247BA88297FB29E009CFF1A /* GamesModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -104,6 +110,14 @@
 				7247BA83297E8549009CFF1A /* HeaderUIView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		7247BA85297FAD71009CFF1A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				7247BA86297FAD82009CFF1A /* APICaller.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +193,8 @@
 				7247BA7C297E7C49009CFF1A /* SearchViewController.swift in Sources */,
 				7247BA7A297E7C24009CFF1A /* HomeViewController.swift in Sources */,
 				7247BA66297E7B3B009CFF1A /* MainTabBarViewController.swift in Sources */,
+				7247BA89297FB29E009CFF1A /* GamesModel.swift in Sources */,
+				7247BA87297FAD82009CFF1A /* APICaller.swift in Sources */,
 				7247BA84297E8549009CFF1A /* HeaderUIView.swift in Sources */,
 				7247BA7E297E7C5C009CFF1A /* FavoriteViewController.swift in Sources */,
 				7247BA82297E80FD009CFF1A /* ItemTableViewCell.swift in Sources */,
