@@ -21,7 +21,7 @@ class APICaller {
     
     static let shared = APICaller()
     
-    func getAllGames(completion: @escaping (Result<[GameResponse], Error >) -> Void){
+    func getAllGames(completion: @escaping (Result<[Games], Error >) -> Void){
         guard let url = URL(string: "\(Constants.baseURL)\(Constants.gamesEndPoint)\(Constants.API_KEY)") else{return}
         
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
@@ -32,16 +32,12 @@ class APICaller {
             do{
 //                let result = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
 //                print(result)
-//                print(result.results[0])
-                
-                let results = try JSONDecoder().decode(GameResponse.self, from: data)
-                print(results.results![0].backgroundImage)
-//               // completion(.success(results.))
-                
-//                let results = try JSONDecoder().decode(GamesAPIResponse.self, from: data)
-//                print(results)
-              //  completion(.success(results.))
 //
+                let results = try JSONDecoder().decode(GameResponse.self, from: data)
+              // print(results.results![0].backgroundImage)
+               completion(.success(results.results!))
+  
+                
             }catch {
                 completion(.failure(APIError.failedTogetData))
             }

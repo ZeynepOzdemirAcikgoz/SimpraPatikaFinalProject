@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ItemTableViewCell: UITableViewCell {
     
     static let identifier = "ItemTableViewCell"
-    // let ItemTableViewCell = ItemTableViewCell()
+    
+    private var games : [GameResponse] = [GameResponse]()
     
     //itemImageView
     private let itemImageView : UIImageView = {
@@ -29,9 +31,9 @@ class ItemTableViewCell: UITableViewCell {
     var icon1 = UIImageView()
     icon1.contentMode = .scaleAspectFill
     icon1.clipsToBounds = true
-    icon1.backgroundColor = .white
+        icon1.backgroundColor = .white
     icon1.layer.cornerRadius = 10
-    icon1.image = UIImage(named: "")
+    icon1.image = UIImage(named: "pc")
     icon1.translatesAutoresizingMaskIntoConstraints = false
         return icon1
     }()
@@ -42,9 +44,9 @@ class ItemTableViewCell: UITableViewCell {
     var icon2 = UIImageView()
     icon2.contentMode = .scaleAspectFill
     icon2.clipsToBounds = true
-    icon2.backgroundColor = .white
+        icon2.backgroundColor = .white
     icon2.layer.cornerRadius = 10
-    icon2.image = UIImage(named: "")
+    icon2.image = UIImage(named: "ps5")
     icon2.translatesAutoresizingMaskIntoConstraints = false
         return icon2
     }()
@@ -53,9 +55,9 @@ class ItemTableViewCell: UITableViewCell {
     var icon3 = UIImageView()
     icon3.contentMode = .scaleAspectFill
     icon3.clipsToBounds = true
-    icon3.backgroundColor = .white
+        icon3.backgroundColor = .white
     icon3.layer.cornerRadius = 10
-    icon3.image = UIImage(named: "")
+    icon3.image = UIImage(named: "xbox")
     icon3.translatesAutoresizingMaskIntoConstraints = false
     return icon3
 }()
@@ -69,7 +71,7 @@ class ItemTableViewCell: UITableViewCell {
         stackViewIcons.distribution = .fillEqually
         //stackViewIcons.alignment = .leading
         stackViewIcons.spacing = 10.0
-        stackViewIcons.backgroundColor = .cyan
+      
         
         stackViewIcons.addArrangedSubview(icon1Image)
         stackViewIcons.addArrangedSubview(icon2Image)
@@ -105,10 +107,8 @@ class ItemTableViewCell: UITableViewCell {
         let button = UIButton()
        // button.setTitle("View more:", for: .normal)
         button.setImage(UIImage(systemName: "plus"),for: .normal )
-       // button.image = UIImage(systemName: "plus")
-//        button.layer.borderColor = UIColor.white.cgColor
-//        button.layer.borderWidth = 1
-//        button.backgroundColor = .systemYellow
+        button.tintColor = .lightGray
+      
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 5
         
@@ -118,10 +118,7 @@ class ItemTableViewCell: UITableViewCell {
         let button = UIButton()
        // button.setTitle("View more:", for: .normal)
         button.setImage(UIImage(systemName: "gift"),for: .normal )
-       // button.image = UIImage(systemName: "gift")
-//        button.layer.borderColor = UIColor.white.cgColor
-//        button.layer.borderWidth = 1
-//        button.backgroundColor = .systemYellow
+        button.tintColor = .lightGray
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 5
         
@@ -131,11 +128,7 @@ class ItemTableViewCell: UITableViewCell {
         let button = UIButton()
        // button.setTitle("View more:", for: .normal)
         button.setImage(UIImage(systemName: "heart.fill"),for: .normal )
-       // button.image = UIImage(systemName: "heart.fill")
-//        button.layer.borderColor = UIColor.white.cgColor
-//        button.layer.borderWidth = 1
-//        button.backgroundColor = .systemYellow
-//        button.translatesAutoresizingMaskIntoConstraints = false
+        button.tintColor = .lightGray
         button.layer.cornerRadius = 5
         
         return button
@@ -152,7 +145,7 @@ class ItemTableViewCell: UITableViewCell {
         stackViewButtons.distribution = .fillEqually
         //stackViewButtons.alignment = .center
         stackViewButtons.spacing = 10.0
-        stackViewButtons.backgroundColor = .cyan
+        
 
         stackViewButtons.addArrangedSubview(logo1Button)
         stackViewButtons.addArrangedSubview(logo2Button)
@@ -179,7 +172,7 @@ class ItemTableViewCell: UITableViewCell {
         button.setTitle("View more:", for: .normal)
         button.layer.borderColor = UIColor.white.cgColor
         button.layer.borderWidth = 1
-        button.backgroundColor = .systemYellow
+       
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 5
         
@@ -200,7 +193,7 @@ class ItemTableViewCell: UITableViewCell {
     func createLabel(){
        // label.frame = CGRect(x: 200, y: 200, width: 100, height: 50)
         label.text = "0"
-        label.backgroundColor = .orange
+       
         label.textColor = UIColor.black
         label.textAlignment = .left
         
@@ -208,7 +201,8 @@ class ItemTableViewCell: UITableViewCell {
 
     }
     func createimageView(){
-    imageView1.backgroundColor = .red
+   
+        
     imageView1.translatesAutoresizingMaskIntoConstraints = false
       
  //imageView1.heightAnchor.constraint(equalToConstant: 150).isActive = true
@@ -223,8 +217,7 @@ class ItemTableViewCell: UITableViewCell {
         stackViewV.distribution = .fillEqually
 //        stackViewV.alignment = .center
         stackViewV.spacing = 10.0
-        stackViewV.backgroundColor = .orange
-
+        
         self.addSubview(stackViewV)
 
         stackViewV.translatesAutoresizingMaskIntoConstraints = false
@@ -247,7 +240,7 @@ class ItemTableViewCell: UITableViewCell {
         button.setTitle("View Less:", for: .normal)
         button.layer.borderColor = UIColor.white.cgColor
         button.layer.borderWidth = 1
-        button.backgroundColor = .systemYellow
+        
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 5
         
@@ -259,18 +252,33 @@ class ItemTableViewCell: UITableViewCell {
         button.setTitle("Show more detail:", for: .normal)
         button.layer.borderColor = UIColor.white.cgColor
         button.layer.borderWidth = 1
-        button.backgroundColor = .blue
+       
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 5
         
         return button
     }()
     
+  
+        let label1 = UILabel()
+        let label2 = UILabel()
+        let label3 = UILabel()
+        let label4 = UILabel()
+        let label5 = UILabel()
+        let label6 = UILabel()
+        
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = .systemPink
+        //contentView.backgroundColor = .systemPink
+        addSubview(label1)
+        addSubview(label2)
+        addSubview(label3)
+        addSubview(label4)
+        addSubview(label5)
+        addSubview(label6)
+       
         
         addSubview(itemImageView)
         addSubview(icon1Image)
@@ -296,14 +304,20 @@ class ItemTableViewCell: UITableViewCell {
     
     
     func configureParentViews() -> [UIView] {
-        let label1 = UILabel()
+//        let label1 = UILabel()
+//        let label2 = UILabel()
+//        let label3 = UILabel()
+//        let label4 = UILabel()
+//        let label5 = UILabel()
+//        let label6 = UILabel()
         //label1.text = "Release Date"
+        
         label1.textAlignment = .left
         label1.attributedText = NSAttributedString(string: "Release Date: ", attributes:
             [.underlineStyle: NSUnderlineStyle.single.rawValue])
         
         
-        let label2 = UILabel()
+        
         label2.text = "23 Dec, 2023"
         label2.textAlignment = .right
         
@@ -359,12 +373,12 @@ class ItemTableViewCell: UITableViewCell {
         
         let label5 = UILabel()
         label5.textAlignment = .left
-        label5.attributedText = NSAttributedString(string: "Chart: ", attributes:
+        label5.attributedText = NSAttributedString(string: "Ratings Count: ", attributes:
             [.underlineStyle: NSUnderlineStyle.single.rawValue])
 
         let label6 = UILabel()
         label6.textAlignment = .right
-        label6.text = "#1 Top"
+        label6.text = "4.7"
 
         let view3 = UIView()
 
@@ -463,4 +477,38 @@ class ItemTableViewCell: UITableViewCell {
         fatalError()
     }
     
-}
+    
+    
+    
+    //CONFIGURE
+    
+    
+    
+    public func configure(with viewModel : ItemTableCellModel){
+
+        itemTitlelabel.text  = viewModel.name
+       
+        //image
+        guard let url = URL(string: "\(viewModel.backgroundImage)") else {
+            return
+            
+        }
+
+        itemImageView.sd_setImage(with: url, completed: nil)
+        //labals
+       
+        label2.text  = viewModel.released
+        label6.text = "\(viewModel.rating)"//String(viewModel.rating ?? 0)
+        
+        //??
+     //   label3.text = viewModel.genres
+    
+        }
+        
+        
+      
+        
+    }
+    
+    
+

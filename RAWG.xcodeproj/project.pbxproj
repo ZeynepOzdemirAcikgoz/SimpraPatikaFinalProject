@@ -20,6 +20,9 @@
 		7247BA84297E8549009CFF1A /* HeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247BA83297E8549009CFF1A /* HeaderUIView.swift */; };
 		7247BA87297FAD82009CFF1A /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247BA86297FAD82009CFF1A /* APICaller.swift */; };
 		7247BA89297FB29E009CFF1A /* GamesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247BA88297FB29E009CFF1A /* GamesModel.swift */; };
+		7247BA8C297FCEB9009CFF1A /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 7247BA8B297FCEB9009CFF1A /* SDWebImage */; };
+		7247BA8E297FCEB9009CFF1A /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7247BA8D297FCEB9009CFF1A /* SDWebImageMapKit */; };
+		729445E2297FF1AA00E78112 /* ItemCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729445E1297FF1AA00E78112 /* ItemCellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,7 @@
 		7247BA83297E8549009CFF1A /* HeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderUIView.swift; sourceTree = "<group>"; };
 		7247BA86297FAD82009CFF1A /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		7247BA88297FB29E009CFF1A /* GamesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesModel.swift; sourceTree = "<group>"; };
+		729445E1297FF1AA00E78112 /* ItemCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7247BA8E297FCEB9009CFF1A /* SDWebImageMapKit in Frameworks */,
+				7247BA8C297FCEB9009CFF1A /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				7247BA88297FB29E009CFF1A /* GamesModel.swift */,
+				729445E1297FF1AA00E78112 /* ItemCellModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -136,6 +143,10 @@
 			dependencies = (
 			);
 			name = RAWG;
+			packageProductDependencies = (
+				7247BA8B297FCEB9009CFF1A /* SDWebImage */,
+				7247BA8D297FCEB9009CFF1A /* SDWebImageMapKit */,
+			);
 			productName = RAWG;
 			productReference = 7247BA5E297E7B3B009CFF1A /* RAWG.app */;
 			productType = "com.apple.product-type.application";
@@ -164,6 +175,9 @@
 				Base,
 			);
 			mainGroup = 7247BA55297E7B3B009CFF1A;
+			packageReferences = (
+				7247BA8A297FCEB9009CFF1A /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 7247BA5F297E7B3B009CFF1A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -196,6 +210,7 @@
 				7247BA89297FB29E009CFF1A /* GamesModel.swift in Sources */,
 				7247BA87297FAD82009CFF1A /* APICaller.swift in Sources */,
 				7247BA84297E8549009CFF1A /* HeaderUIView.swift in Sources */,
+				729445E2297FF1AA00E78112 /* ItemCellModel.swift in Sources */,
 				7247BA7E297E7C5C009CFF1A /* FavoriteViewController.swift in Sources */,
 				7247BA82297E80FD009CFF1A /* ItemTableViewCell.swift in Sources */,
 				7247BA62297E7B3B009CFF1A /* AppDelegate.swift in Sources */,
@@ -408,6 +423,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7247BA8A297FCEB9009CFF1A /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7247BA8B297FCEB9009CFF1A /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7247BA8A297FCEB9009CFF1A /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		7247BA8D297FCEB9009CFF1A /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7247BA8A297FCEB9009CFF1A /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		7247BA6A297E7B3B009CFF1A /* RAWG.xcdatamodeld */ = {

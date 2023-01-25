@@ -68,7 +68,7 @@ class HeaderUIView: UIView {
             orderByButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
            // orderByButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 20),
               orderByButton.widthAnchor.constraint(equalToConstant: 150),
-            orderByButton.heightAnchor.constraint(equalToConstant: 50)
+            orderByButton.heightAnchor.constraint(equalToConstant: 30)
             
         ]
         
@@ -77,7 +77,7 @@ class HeaderUIView: UIView {
             platformButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
            // platformButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 20),
             platformButton.widthAnchor.constraint(equalToConstant: 150),
-            platformButton.heightAnchor.constraint(equalToConstant: 50)
+            platformButton.heightAnchor.constraint(equalToConstant: 30)
             
         ]
         
